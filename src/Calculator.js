@@ -44,26 +44,26 @@ function Calculator(props) {
       </div>
 
       <div style={style.numpad}>
-        <CalculatorButton update={() => setState({})} width="100"  display="clear" clear="left" />
+        <CalculatorButton update={() => setState({})} width="100"  display="clear" />
         <CalculatorButton update={evaluate(state, setState)}  display="=" />
         <CalculatorButton update={operator(state, setState, '+')} display="+" />
 
-        <CalculatorButton update={digit(state, setState, 7)} display="7" clear="left"  />
+        <CalculatorButton update={digit(state, setState, 7)} display="7" />
         <CalculatorButton update={digit(state, setState, 8)} display="8" />
         <CalculatorButton update={digit(state, setState, 9)} display="9" />
         <CalculatorButton update={operator(state, setState, '-')} display="-" />
 
-        <CalculatorButton update={digit(state, setState, 4)} display="4" clear="left" />
+        <CalculatorButton update={digit(state, setState, 4)} display="4" />
         <CalculatorButton update={digit(state, setState, 5)} display="5" />
         <CalculatorButton update={digit(state, setState, 6)} display="6" />
         <CalculatorButton update={operator(state, setState, '*')} display="*" />
 
-        <CalculatorButton update={digit(state, setState, 1)} display="1" clear="left" />
+        <CalculatorButton update={digit(state, setState, 1)} display="1" />
         <CalculatorButton update={digit(state, setState, 2)} display="2" />
         <CalculatorButton update={digit(state, setState, 3)} display="3" />
         <CalculatorButton update={operator(state, setState, '/')} display="/" />
 
-        <CalculatorButton update={digit(state, setState, 0)} display="0" clear="left" />
+        <CalculatorButton update={digit(state, setState, 0)} display="0" />
     </div>
     </div>
   );
