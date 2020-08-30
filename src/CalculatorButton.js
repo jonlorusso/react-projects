@@ -5,10 +5,8 @@ function CalculatorButton(props) {
 
 
   let style = {
-    float: "left",
     width: width,
     height: "50px",
-    clear: props.clear,
     border: "1px solid black",
   };
 

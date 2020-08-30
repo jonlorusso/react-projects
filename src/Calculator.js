@@ -38,41 +38,59 @@ function Calculator(props) {
   const [state, setState] = useState({});
 
   return (
-    <div>
-      <CalculatorButton update={() => setState({})} width="200"  display={state.value} clear="left" />
+    <div style={style.calculator}>
+      <div style={style.result}>
+        <CalculatorButton update={() => setState({})} width="200"  display={state.value} clear="left" />
+      </div>
 
-      <CalculatorButton update={() => setState({})} width="102"  display="clear" clear="left" />
-      <CalculatorButton update={evaluate(state, setState)}  display="=" />
-      <CalculatorButton update={operator(state, setState, '+')} display="+" />
+      <div style={style.numpad}>
+        <CalculatorButton update={() => setState({})} width="100"  display="clear" clear="left" />
+        <CalculatorButton update={evaluate(state, setState)}  display="=" />
+        <CalculatorButton update={operator(state, setState, '+')} display="+" />
 
-      <CalculatorButton update={digit(state, setState, 7)} display="7" clear="left"  />
-      <CalculatorButton update={digit(state, setState, 8)} display="8" />
-      <CalculatorButton update={digit(state, setState, 9)} display="9" />
-      <CalculatorButton update={operator(state, setState, '-')} display="-" />
+        <CalculatorButton update={digit(state, setState, 7)} display="7" clear="left"  />
+        <CalculatorButton update={digit(state, setState, 8)} display="8" />
+        <CalculatorButton update={digit(state, setState, 9)} display="9" />
+        <CalculatorButton update={operator(state, setState, '-')} display="-" />
 
-      <CalculatorButton update={digit(state, setState, 4)} display="4" clear="left" />
-      <CalculatorButton update={digit(state, setState, 5)} display="5" />
-      <CalculatorButton update={digit(state, setState, 6)} display="6" />
-      <CalculatorButton update={operator(state, setState, '*')} display="*" />
+        <CalculatorButton update={digit(state, setState, 4)} display="4" clear="left" />
+        <CalculatorButton update={digit(state, setState, 5)} display="5" />
+        <CalculatorButton update={digit(state, setState, 6)} display="6" />
+        <CalculatorButton update={operator(state, setState, '*')} display="*" />
 
-      <CalculatorButton update={digit(state, setState, 1)} display="1" clear="left" />
-      <CalculatorButton update={digit(state, setState, 2)} display="2" />
-      <CalculatorButton update={digit(state, setState, 3)} display="3" />
-      <CalculatorButton update={operator(state, setState, '/')} display="/" />
+        <CalculatorButton update={digit(state, setState, 1)} display="1" clear="left" />
+        <CalculatorButton update={digit(state, setState, 2)} display="2" />
+        <CalculatorButton update={digit(state, setState, 3)} display="3" />
+        <CalculatorButton update={operator(state, setState, '/')} display="/" />
 
-      <CalculatorButton update={digit(state, setState, 0)} display="0" clear="left" />
+        <CalculatorButton update={digit(state, setState, 0)} display="0" clear="left" />
+    </div>
     </div>
   );
 }
 
 let style = {
-  socialCard: {
-    marginTop: "5px",
-    marginLeft: "100px",
-    paddingTop: "10px",
-    paddingLeft: "10px",
+  calculator: {
+    width: "300px",
+    height: "400px",
+    border: "2px solid black",
+    backgroundColor: "darkgray",
+    margin: "50px",
+  },
+  result: {
+    marginTop: "30px",
     display: "flex",
-    width: "575px"
+    alignItems: "center",
+    justifyContent: "center",
+    height: "50px",
+    width: "300px",
+  },
+  numpad: {
+    paddingLeft: "50px",
+    marginTop: "40px",
+    display: "flex",
+    flexWrap: "wrap",
+    width: "200px",
   }
 };
 
